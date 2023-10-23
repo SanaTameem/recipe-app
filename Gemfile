@@ -74,6 +74,4 @@ group :test do
   gem 'webdrivers'
 end
 
-
-
 gem 'letter_opener', '~> 1.8'
