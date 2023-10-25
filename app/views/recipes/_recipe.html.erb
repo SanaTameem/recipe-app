@@ -21,7 +21,8 @@
 
   <p>
     <strong>Public:</strong>
-    <%= recipe.public %>
+    <%#= recipe.public %>
+    <%= button_to(recipe.public ? "Make Private" : "Make Public", toggle_public_recipe_path(recipe), method: :put, remote: true) %>
   </p>
 
   <p>
