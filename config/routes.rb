@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   root to: 'foods#index'
   resources :foods, only: [:index, :show, :new, :create, :destroy]
   resources :general_shopping_list, only: [:index]
+  resources :recipes do
+    member do
+      put 'toggle_public'
+    end
+  end
 
   # resources :recipes do
   #   resources :recipe_foods
