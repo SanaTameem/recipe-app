@@ -1,6 +1,10 @@
 class Recipe < ApplicationRecord
-  belongs_to :user, foreign_key: 'user_id', class_name: 'User'
-  has_many :recipe_foods, foreign_key: 'recipe_id'
-  validates :name, :preparation_time, :cook_time, :description, presence: true
+  belongs_to :user
+  has_many :recipe_foods, foreign_key: :recipe_id
+
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :preparation_time, presence: true
+  validates :cooking_time, presence: true
   :public
 end
