@@ -7,13 +7,13 @@ development:
   <<: *default
   database: recipe_app_development
   username: postgres
-  password: 1d2@Dorcas
+  password: 12345
 
 test:
   <<: *default
   database: recipe_app_test
   username: postgres
-  password: 1d2@Dorcas
+  password: 12345
 
 production:
   <<: *default

@@ -1,7 +1,5 @@
 class RecipesController < ApplicationController
   load_and_authorize_resource
-
-  # before_action :set_recipe, only: %i[show destroy]
   def index
     @recipes = Recipe.includes(:user).where(user_id: current_user.id)
   end
@@ -14,7 +12,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      redirect_to food_path(@recipe), notice: 'Food was successfully created.'
+      redirect_to recipe_path(@recipe), notice: 'Recipe was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

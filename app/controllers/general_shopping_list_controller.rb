@@ -7,14 +7,14 @@ class GeneralShoppingListController < ApplicationController
       food.recipe_foods.each do |recipe_food|
         total_quantity += recipe_food.quantity
       end
-      @missing_ingredients << food if total_quantity > food.quantity
+      @missing_ingredients << food
     end
     @missing_ingredients = @missing_ingredients.map do |food|
       {
         name: food.name,
         unit: food.measurement_unit,
-        quantity: food.recipe_foods.sum(:quantity) - food.quantity,
-        price: food.price * (food.recipe_foods.sum(:quantity) - food.quantity)
+        quantity: food.recipe_foods.sum(:quantity),
+        price: food.price * food.recipe_foods.sum(:quantity)
       }
     end
     @total_price = @missing_ingredients.map { |missing_ingredient| missing_ingredient[:price] }.sum
