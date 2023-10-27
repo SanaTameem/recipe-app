@@ -24,6 +24,7 @@ class FoodsController < ApplicationController
   end
 
   def destroy
+    @food.recipe_foods.destroy_all
     if @food.destroy
       flash[:success] = 'Food was successfully deleted.'
     else

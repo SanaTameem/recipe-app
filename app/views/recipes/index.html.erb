@@ -14,6 +14,11 @@
          </tr>
          <% @recipes.each do |recipe| %>
          <tr>
+         <td>
+          <% if recipe.user_id == current_user.id %>
+            <%= link_to recipe.name, recipe_path(id: recipe.id) %>
+          <% end %>
+        </td>
          <td><%= recipe.name %></td>
          <td><%= recipe.preparation_time %></td>
          <td><%= recipe.cooking_time %></td>
