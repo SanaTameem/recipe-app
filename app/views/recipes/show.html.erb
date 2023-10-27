@@ -12,8 +12,8 @@
    </div>
    <p><%=@recipe.description%></p>
    <div class='recipe_buttons'>
-   <%= button_to(@recipe.public ? "Make Private" : "Make Public", toggle_public_recipe_path(@recipe), method: :put, remote: true) %>
       <% if can? :update, @recipe%>
+         <%= button_to(@recipe.public ? "Make Private" : "Make Public", toggle_public_recipe_path(@recipe), method: :put, remote: true) %>
          <%=link_to "Generate Shopping List", general_shopping_list_index_path, class: "button" %>
          <%=link_to "Add ingredient", new_recipe_recipe_food_path(@recipe), class: "button" %>
       <%end%>
