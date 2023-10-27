@@ -3,10 +3,8 @@ require 'rails_helper'
 RSpec.feature 'Recipes', type: :feature do
   before :each do
     @user = User.new(name: 'Marial', email: 'marial@gmail.com', password: '123456')
-    @recipe = Recipe.new(name: 'Beryani', description: 'Onion , Rice, Tomato and yougurt are needed',
-                         preparation_time: 1, cooking_time: 2, user: @user)
+    @recipe = Recipe.new(name: 'Beryani', description: 'Onion', preparation_time: 1, cooking_time: 2, user: @user)
   end
-
   describe 'recipe#index page' do
     it 'Should display the recipe index page for a logged in user' do
       visit recipes_path
