@@ -2,8 +2,8 @@
    <h2>Public Recipes</h2>
    <% if @recipes.length == 0 %>
       <p>There are no public recipes yet.</p>
-      <% else %>
-      <%@recipes.each do |recipe|%>
+   <% else %>
+   <%@recipes.each do |recipe|%>
       <article class="">
          <%=link_to recipe_path(id: recipe.id) do%>
          <div>
@@ -21,6 +21,6 @@
             <p>Total price: <%=total_price%> $</p>
          </div>
       </article>
-      <%end%>
+   <%end%>
    <%end%>
 </section>
