@@ -1,0 +1,174 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Add-food {
+  width: 70%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+  font-family: cursive;
+}
+
+.t-item {
+  padding: 14px;
+  text-align: center;
+}
+
+.table {
+  margin-top: 70px;
+}
+
+td,
+th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+.recipe_buttons {
+  margin-top: 70px;
+  display: flex;
+  gap: 100px;
+}
+
+td {
+  padding: 2rem;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+section h1 {
+  text-align: center;
+}
+
+.button {
+  border: none;
+  background-color: rgb(5, 6, 7);
+  padding: 10px 12px;
+  border-radius: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+}
+
+.delete {
+  color: #fff;
+  background-color: #946b6f;
+  padding: 6px 12px;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+.delete:hover {
+  color: white;
+}
+
+.box {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.box1 {
+  width: 50%;
+}
+
+.box2 {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recipe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.recipe-table {
+  width: 82%;
+}
+
+.public-recipe-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.public_recipes {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 65px;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px #000;
+}
+
+.public-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 25px;
+}
+
+.recipe-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.recipe-link div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.total-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

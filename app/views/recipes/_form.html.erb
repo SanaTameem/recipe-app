@@ -1,0 +1,33 @@
+
+<%= form_with(model: recipe, html: { class: "" }) do |form| %>
+  <%= render "shared/error_form_message", resource: recipe %>
+  <div class="field">
+     <%= form.label "Name", style: "display: block" %>
+     <%= form.text_field :name, required: true %>
+  </div>
+  
+  <div class="field">
+     <%= form.label "Preparation_time", style: "display: block" %>
+     <%= form.text_field :preparation_time, required: true %>
+  </div>
+  
+  <div class="field">
+     <%= form.label "Cooking_time", style: "display: block" %>
+     <%= form.text_field :cooking_time, required: true %>
+  </div>
+  
+  <div class="field">
+     <%= form.label "Description", style: "display: block" %>
+     <%= form.text_area(:description, required: true, size: '30x5') %>
+  </div>
+  
+  <div class="field">
+     <%= form.label :public %><br />
+     <%= form.label :public, "True", :value => "True"  %>
+     <%= form.radio_button :public, true%>
+     <%= form.label :public, "False", :value => "False" %>
+     <%= form.radio_button :public, false, :checked => true %>
+  </div>
+  
+  <%= form.submit "Create Recipe", class: "button"%>
+  <% end %>

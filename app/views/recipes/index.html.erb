@@ -1,0 +1,37 @@
+<section class='recipe'>
+   <h1>Recipes List</h1>
+   <div class="container">
+      <button class="button"><%= link_to "Add Recipe", new_recipe_path%></button>
+   </div>
+   <% if @recipes.count > 0%>
+      <table class="recipe-table">
+         <tr>
+         <th>Name</th>
+         <th>Preparation_time</th>
+         <th>Cooking_time</th>
+         <th>Description</th>
+         <th>Public</th>
+         <th>Actions</th>
+         </tr>
+         <% @recipes.each do |recipe| %>
+         <tr>
+         <td>
+            <% if recipe.user_id == current_user.id %>
+               <%= link_to recipe.name, recipe_path(id: recipe.id) %>
+            <% else %>
+               <%= recipe.name %>
+            <% end %>
+         </td>
+         <td><%= recipe.preparation_time %></td>
+         <td><%= recipe.cooking_time %></td>
+         <td><%= recipe.description %></td>
+         <td><%= recipe.public %></td>
+         <td><%= link_to "Delete", recipe_path(recipe), class: "delete",data: { turbo_method: :delete, turbo_confirm: "Are you  sure?"}%>
+         </td>
+         </tr>
+         <% end %>
+      <%else%>
+      <h2>No recipe</h2>
+   <%end%>
+   </div>
+</section>
