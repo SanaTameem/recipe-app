@@ -4,13 +4,14 @@
       <button class="button"><%= link_to "Add Recipe", new_recipe_path%></button>
    </div>
    <% if @recipes.count > 0%>
-      <table>
+      <table class="recipe-table">
          <tr>
          <th>Name</th>
          <th>Preparation_time</th>
          <th>Cooking_time</th>
          <th>Description</th>
          <th>Public</th>
+         <th>Actions</th>
          </tr>
          <% @recipes.each do |recipe| %>
          <tr>
